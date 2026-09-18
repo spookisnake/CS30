@@ -12,6 +12,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 
 public class SemesterAvg {
 
@@ -56,19 +59,52 @@ public class SemesterAvg {
 		panel.setLayout(null);
 		
 		Gr1 = new JTextField();
-		Gr1.setText("Enter First Grade");
+		Gr1.setText("Enter First Grade: ");
+		Gr1.addKeyListener(new KeyAdapter() 
+		{
+			@Override
+			public void keyPressed(KeyEvent e) 
+			{
+				if(Gr1.getText().equals("Enter First Grade: ")) 
+				{
+					Gr1.setText("");
+				}	
+			}
+		});
 		Gr1.setBounds(10, 11, 141, 43);
 		panel.add(Gr1);
 		Gr1.setColumns(10);
 		
 		Gr2 = new JTextField();
-		Gr2.setText("Enter Second Grade");
+		Gr2.setText("Enter Second Grade: ");
+		Gr2.addKeyListener(new KeyAdapter() 
+		{
+			@Override
+			public void keyPressed(KeyEvent e) 
+			{
+				if(Gr2.getText().equals("Enter Second Grade: ")) 
+				{
+					Gr2.setText("");
+				}	
+			}
+		});
 		Gr2.setColumns(10);
 		Gr2.setBounds(10, 84, 141, 43);
 		panel.add(Gr2);
 		
 		Gr3 = new JTextField();
-		Gr3.setText("Enter Third Grade");
+		Gr3.setText("Enter Third Grade: ");
+		Gr3.addKeyListener(new KeyAdapter() 
+		{
+			@Override
+			public void keyPressed(KeyEvent e) 
+			{
+				if(Gr3.getText().equals("Enter Third Grade: ")) 
+				{
+					Gr3.setText("");
+				}
+			}
+		});
 		Gr3.setColumns(10);
 		Gr3.setBounds(10, 157, 141, 43);
 		panel.add(Gr3);
@@ -83,19 +119,21 @@ public class SemesterAvg {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				String eventName = e.getActionCommand();
+				String g1 = Gr1.getText();
+				String g2 = Gr2.getText();
+				String g3 = Gr3.getText();
 				
-				if (eventName.equals("Average")) 
-				{
-					double avgGrade;
-					String g1 = Gr1.getText();
-					String g2 = Gr2.getText();
-					String g3 = Gr3.getText();
-					
-					avgGrade = (Double.parseDouble(g1) + Double.parseDouble(g2)
-								+ Double.parseDouble(g3))/3;
-					display.setText(Double.toString(avgGrade));
-				}
+				double G1 = Double.parseDouble(g1);
+				double G2 = Double.parseDouble(g2);
+				double G3 = Double.parseDouble(g3);
+				
+				double avgGrade = (G1 + G2 + G3)/3;
+				
+				DecimalFormat dc = new DecimalFormat("0.0");
+				
+				
+				display.setText("Your semester average is: "
+						+ dc.format(avgGrade));	
 			}
 		});
 		submit.setBounds(161, 11, 153, 189);
