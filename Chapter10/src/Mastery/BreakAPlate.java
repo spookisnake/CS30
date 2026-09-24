@@ -3,6 +3,12 @@ package Mastery;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BreakAPlate {
 
@@ -38,6 +44,21 @@ public class BreakAPlate {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JLabel plates = new JLabel("");
+		plates.setBounds(45, 31, 342, 83);
+		panel.add(plates);
+		
+		JButton play = new JButton("Click to Fart");
+		play.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		play.setBounds(160, 164, 108, 33);
+		panel.add(play);
 	}
-
 }
