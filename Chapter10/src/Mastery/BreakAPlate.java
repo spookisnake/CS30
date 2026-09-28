@@ -57,8 +57,7 @@ public class BreakAPlate {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel plates = new JLabel("");
-	
+		JLabel plates = new JLabel(new ImageIcon("../Chapter10/src/Mastery/plates.gif"));
 		plates.setBounds(148, 24, 278, 90);
 		panel.add(plates);
 		
