@@ -9,12 +9,15 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class schoolAssign {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField firstName;
+	private JTextField lastName;
 
 	/**
 	 * Launch the application.
@@ -51,27 +54,45 @@ public class schoolAssign {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(10, 11, 165, 41);
-		panel.add(textField);
-		textField.setColumns(10);
+		firstName = new JTextField();
+		firstName.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) 
+			{
+				
+			}
+		});
+		firstName.setText("First Name");
+		firstName.setBounds(10, 11, 165, 41);
+		panel.add(firstName);
+		firstName.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(214, 11, 165, 41);
-		panel.add(textField_1);
+		lastName = new JTextField();
+		lastName.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) 
+			{
+				
+			}
+		});
+		lastName.setText("Last Name");
+		lastName.setColumns(10);
+		lastName.setBounds(214, 11, 165, 41);
+		panel.add(lastName);
 		
 		JButton submit = new JButton("Submit");
 		submit.setBounds(388, 68, 126, 189);
 		panel.add(submit);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 96, 165, 35);
-		panel.add(comboBox);
+		JComboBox grade = new JComboBox();
+		grade.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12"}));
+		grade.setBounds(10, 96, 165, 35);
+		panel.add(grade);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(214, 96, 165, 35);
-		panel.add(comboBox_1);
+		JComboBox district = new JComboBox();
+		district.setModel(new DefaultComboBoxModel(new String[] {"North", "South", "East", "West", "Center"}));
+		district.setBounds(214, 96, 165, 35);
+		panel.add(district);
 		
 		JLabel placeholder = new JLabel("");
 		placeholder.setBounds(10, 166, 267, 137);
