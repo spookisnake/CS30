@@ -78,12 +78,14 @@ public class BreakAPlate {
 				{
 					plates.setIcon(twoBroken);
 					prize.setIcon(sticker);
+					play.setText("Play Again");	
 				}
 				
 				else if(breakPlate == 2) 
 				{
 					plates.setIcon(allBroken);
 					prize.setIcon(tiger);
+					play.setText("Play Again");
 				}
 			}
 		});
