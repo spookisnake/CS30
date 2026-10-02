@@ -49,7 +49,7 @@ public class schoolAssign {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 540, 353);
+		frame.setBounds(100, 100, 540, 465);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -98,8 +98,12 @@ public class schoolAssign {
 		district.setBounds(214, 96, 165, 35);
 		panel.add(district);
 		
+		JLabel desc = new JLabel("");
+		desc.setBounds(10, 155, 369, 112);
+		panel.add(desc);
+		
 		JLabel placeholder = new JLabel("");
-		placeholder.setBounds(10, 166, 267, 137);
+		placeholder.setBounds(10, 278, 267, 137);
 		panel.add(placeholder);
 		
 		JButton submit = new JButton("Submit");
@@ -116,5 +120,7 @@ public class schoolAssign {
 		});
 		submit.setBounds(388, 68, 126, 189);
 		panel.add(submit);
+		
+		
 	}
 }
