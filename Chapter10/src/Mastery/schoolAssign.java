@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class schoolAssign {
 
@@ -59,7 +61,10 @@ public class schoolAssign {
 			@Override
 			public void keyPressed(KeyEvent e) 
 			{
-				
+				if(firstName.getText().equals("First Name")) 
+				{
+					firstName.setText("");
+				}
 			}
 		});
 		firstName.setText("First Name");
@@ -72,18 +77,17 @@ public class schoolAssign {
 			@Override
 			public void keyPressed(KeyEvent e) 
 			{
-				
+				if(lastName.getText().equals("Last Name")) 
+				{
+					lastName.setText("");
+				}
 			}
 		});
 		lastName.setText("Last Name");
 		lastName.setColumns(10);
 		lastName.setBounds(214, 11, 165, 41);
 		panel.add(lastName);
-		
-		JButton submit = new JButton("Submit");
-		submit.setBounds(388, 68, 126, 189);
-		panel.add(submit);
-		
+
 		JComboBox grade = new JComboBox();
 		grade.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12"}));
 		grade.setBounds(10, 96, 165, 35);
@@ -97,5 +101,20 @@ public class schoolAssign {
 		JLabel placeholder = new JLabel("");
 		placeholder.setBounds(10, 166, 267, 137);
 		panel.add(placeholder);
+		
+		JButton submit = new JButton("Submit");
+		submit.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(grade.getSelectedItem().equals("10")) 
+				{
+					String fn = firstName.getText();
+				}
+				
+			}
+		});
+		submit.setBounds(388, 68, 126, 189);
+		panel.add(submit);
 	}
 }
