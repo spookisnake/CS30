@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
@@ -47,9 +49,16 @@ public class schoolAssign {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
+		ImageIcon northBeaver = new ImageIcon("../Chapter10/src/Mastery/beaver.png");
+		ImageIcon southBulldog = new ImageIcon("../Chapter10/src/Mastery/bulldog.jpg");
+		ImageIcon eastPuma = new ImageIcon("../Chapter10/src/Mastery/puma.jpg");
+		ImageIcon westBear = new ImageIcon("../Chapter10/src/Mastery/bear.jpg");
+		ImageIcon centerHawk = new ImageIcon("../Chapter10/src/Mastery/hawk.jpg");
+		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 540, 465);
+		frame.setBounds(100, 100, 600, 471);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -68,7 +77,7 @@ public class schoolAssign {
 			}
 		});
 		firstName.setText("First Name");
-		firstName.setBounds(10, 11, 165, 41);
+		firstName.setBounds(10, 24, 165, 41);
 		panel.add(firstName);
 		firstName.setColumns(10);
 		
@@ -85,7 +94,7 @@ public class schoolAssign {
 		});
 		lastName.setText("Last Name");
 		lastName.setColumns(10);
-		lastName.setBounds(214, 11, 165, 41);
+		lastName.setBounds(214, 24, 165, 41);
 		panel.add(lastName);
 
 		JComboBox grade = new JComboBox();
@@ -99,11 +108,11 @@ public class schoolAssign {
 		panel.add(district);
 		
 		JLabel desc = new JLabel("");
-		desc.setBounds(10, 155, 369, 112);
+		desc.setBounds(10, 155, 409, 60);
 		panel.add(desc);
 		
 		JLabel placeholder = new JLabel("");
-		placeholder.setBounds(10, 278, 267, 137);
+		placeholder.setBounds(10, 226, 409, 206);
 		panel.add(placeholder);
 		
 		JButton submit = new JButton("Submit");
@@ -111,14 +120,33 @@ public class schoolAssign {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				if(grade.getSelectedItem().equals("10")) 
-				{
-					String fn = firstName.getText();
-				}
+				desc.setText(firstName.getText() + " " + lastName.getText() 
+                + " is in grade " + grade.getSelectedItem() 
+                + " and goes to " + district.getSelectedItem() + " high school.");
 				
+				 if(district.getSelectedItem().equals("North")) 
+			        {
+			            placeholder.setIcon(northBeaver);
+			        }
+			        else if(district.getSelectedItem().equals("South"))
+			        {
+			            placeholder.setIcon(southBulldog);
+			        }
+			        else if(district.getSelectedItem().equals("East"))
+			        {
+			            placeholder.setIcon(eastPuma);
+			        }
+			        else if(district.getSelectedItem().equals("West"))
+			        {
+			            placeholder.setIcon(westBear);
+			        }
+			        else if(district.getSelectedItem().equals("Center"))
+			        {
+			            placeholder.setIcon(centerHawk);
+			        }
 			}
 		});
-		submit.setBounds(388, 68, 126, 189);
+		submit.setBounds(448, 11, 126, 251);
 		panel.add(submit);
 		
 		
