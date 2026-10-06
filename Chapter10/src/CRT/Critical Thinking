@@ -1,0 +1,22 @@
+Critical Thinking Questions:
+
+#1 A GUI (Graphical User Interface) is a way for users to interact with a computer using visual elements like buttons, icons, menus, and windows.
+
+#2 In an event-driven application, the program waits for an event (such as a mouse click, key press, or button press), then executes the code connected to that event.
+
+#3 No, you need to add a panel first and absolute layout and then you can start adding things
+
+#4 A JLabel can respond to events, such as a mouse click or a button press, by adding an event listener to it.
+
+#5 A GUI should run on the Event Dispatch Thread because it safely handles user interactions and updates to the GUI, 
+preventing different parts of the program from changing the GUI at the same time and causing errors.
+
+#6 A label is where the program displays either Images or Text, while a button is interactive and can be clicked by the user.
+
+#8 There is "BorderLayout", it arranges things in 5 different areas. "FlowLayout" places things in a row. And "GridLayout" arranges things in equal-sized rows and columns.
+
+#13 The numeric data has to be converted from a String into a numeric data type, either as int or double, before it can be used in a calculation.
+
+#14 the value of Num 1 is 8 
+
+#15  A combo box is a better choice because it lets the user select one name from a list of six options, preventing them from entering an invalid name.
