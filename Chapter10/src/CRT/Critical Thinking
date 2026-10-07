@@ -17,6 +17,6 @@ preventing different parts of the program from changing the GUI at the same time
 
 #13 The numeric data has to be converted from a String into a numeric data type, either as int or double, before it can be used in a calculation.
 
-#14 the value of Num 1 is 8 
+#14 The value of Num 1 is 8 
 
-#15  A combo box is a better choice because it lets the user select one name from a list of six options, preventing them from entering an invalid name.
+#15 A combo box is a better choice because it lets the user select one name from a list of six options, preventing them from entering an invalid name.
