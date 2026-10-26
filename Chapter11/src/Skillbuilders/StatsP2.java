@@ -44,7 +44,6 @@ public class StatsP2
 		try 
 		{
 			dataFile = new File(fileName);
-			
 			out = new FileWriter(dataFile);
 			writeFile = new BufferedWriter(out);
 			
