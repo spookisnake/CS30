@@ -4,7 +4,8 @@ package Mastery;
 import java.io.*;
 import java.util.*;
 
-public class WordGuess {
+public class WordGuess 
+{
 
     public static void main(String[] args) 
     {
