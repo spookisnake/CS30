@@ -1,5 +1,8 @@
 package Mastery;
 
+import java.io.*;
+import java.util.Scanner;
+
 public class CountVowels 
 {
 
@@ -8,44 +11,60 @@ public class CountVowels
 		File textFile;
 	    FileReader in;
 	    BufferedReader readFile;
+	    
 	    String fileName;
 	    String lineInFile, lowercaseText, letter;
+	    
 	    int vowelSum = 0;
 	       
-	       
+	    Scanner input = new Scanner(System.in);
 
 	    /* prompt the user for the name of the file */
-	    //????
-
+	    System.out.println("Enter the file name: ");
+	    fileName = input.next();
+	    
 	    /* count the vowels in the file */
 	    try 
 	    {
-             //new File object required
-	         //new File reader object required
-	         //new BufferedReader object required
+             textFile = new File(fileName);
+	         in = new FileReader(textFile);
+	         readFile = new BufferedReader(in);
 
-	    	//read the lines from the file
-	    	//as lines are read convert them to lower case
-	    	//iterate through the lower case text
-	    	//using the String class 
-	    	//check if each character traverse throug is a vowel
-	    	//update total vowels
-	                
+	         while ((lineInFile = readFile.readLine()) != null) 
+	         {
+
+	                lowercaseText = lineInFile.toLowerCase();
+
+	                for (int i = 0; i < lowercaseText.length(); i++) 
+	                {
+
+	                    letter = lowercaseText.substring(i, i + 1);
+
+	                    if (letter.equals("a") || letter.equals("e") ||
+	                        letter.equals("i") || letter.equals("o") ||
+	                        letter.equals("u")) 
+	                    {
+
+	                        vowelSum++;
+	                }
+	          }
 	    }
-	            //user wants to know the number of vowels inside a file name
+	    System.out.println("Number of vowels: " + vowelSum);
 
-	            //close BufferedReader object
-	            //close FileReader object
+	    readFile.close();
+	    in.close();
 
 		} 
-	    catch (/* ??? */) 
-	    {
-	        /* ??? */
-	    } 
-	    catch (/* ??? */) 
-	    {
-	           
-	    }
+		catch(FileNotFoundException e) 
+		{	
+			System.out.println("File not found. ");
+			System.err.println("IOException: " + e.getMessage());
+		} 
+	    catch(IOException e) 
+		{
+			System.out.println("Problem reading the file.");
+			System.err.println("IOException: " + e.getMessage());
+		}
 
 	}
 

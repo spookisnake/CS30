@@ -61,14 +61,11 @@ public class WordGuess
                 secretWord = readFile.readLine();
             }
 
-            readFile.close();
-            in.close();
-
         } 
         catch (IOException e) 
         {
             System.out.println("File error.");
-            return;
+            System.err.println("IOException: " + e.getMessage());
         }
 
         // begin the game
